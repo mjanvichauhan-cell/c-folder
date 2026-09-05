@@ -25,29 +25,6 @@ The repository currently contains programs related to:
 - Tree Queries
 - Dynamic Programming
 
-## 📂 Project Structure
-
-helloworld/
-│
-├── ArrayVectordsa1.cpp
-├── ArrayVectordsa2.cpp
-├── bstdsa.cpp
-├── btdsa.cpp
-├── dpdsa.cpp
-├── graphsdsa.cpp
-├── greedyandnodsa.cpp
-├── heapsdsa.cpp
-├── linkedlistdsa.cpp
-├── mathsdsa.cpp
-├── patternsdsa.cpp
-├── queuedsa.cpp
-├── recursionfunctiondsa.cpp
-├── SortingSearchingdsa.cpp
-├── stackdsa.cpp
-├── stldsа.cpp
-├── stringdsa.cpp
-├── treetquerydsa.cpp
-
 ## 🎯 Goals
 
 The main goals of this repository are:
@@ -69,6 +46,31 @@ The main goals of this repository are:
 - Organize programs into topic-wise folders
 - Add problem statements and solutions
 - Improve code documentation
+
+ ## 📂 Project Structure
+
+ ```text
+helloworld/
+│
+├── ArrayVectordsa1.cpp
+├── ArrayVectordsa2.cpp
+├── bstdsa.cpp
+├── btdsa.cpp
+├── dpdsa.cpp
+├── graphsdsa.cpp
+├── greedyandnodsa.cpp
+├── heapsdsa.cpp
+├── linkedlistdsa.cpp
+├── mathsdsa.cpp
+├── patternsdsa.cpp
+├── queuedsa.cpp
+├── recursionfunctiondsa.cpp
+├── SortingSearchingdsa.cpp
+├── stackdsa.cpp
+├── stldsа.cpp
+├── stringdsa.cpp
+├── treetquerydsa.cpp
+
 
 ## 📌 Note
 
