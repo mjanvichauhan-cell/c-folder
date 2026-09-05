@@ -27,7 +27,6 @@ The repository currently contains programs related to:
 
 ## 📂 Project Structure
 
-```text
 helloworld/
 │
 ├── ArrayVectordsa1.cpp
