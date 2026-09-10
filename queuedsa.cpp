@@ -335,7 +335,7 @@
 //     return 0;
 // }
 
-//deque
+//8.deque
 // #include <iostream>
 // using namespace std;
 // class Deque{
@@ -429,7 +429,7 @@
 //     return 0;
 // }
 
-//8.stack using deque
+//9.stack using deque
 // #include <iostream>
 // #include <deque>
 // using namespace std;
@@ -471,7 +471,7 @@
 //     return 0;
 // }
 
-//9.queue using deque
+//10.queue using deque
 // #include <iostream>
 // #include <deque>
 // using namespace std;
@@ -513,7 +513,7 @@
 //     return 0;
 // }
 
-//10.return max sliding window which contain the max element in each row
+//11.return max sliding window which contain the max element in each row
 //slind window of size k moving right by one pos
 // #include<iostream>
 // #include<vector>
@@ -550,7 +550,7 @@
 //     return 0;
 // }
 
-//11.1st -ve integer in every window of size k
+//12.1st -ve integer in every window of size k
 // #include <iostream>
 // #include <vector>
 // #include <queue>
@@ -582,7 +582,7 @@
 //     return 0;
 // }
 
-//12.1st non repeating chr in stream of chr
+//13.1st non repeating chr in stream of chr
 // #include <iostream>
 // #include <queue>
 // #include <vector>
@@ -609,7 +609,7 @@
 //     return 0;
 // }
 
-//13.no of subarray having sum less than k
+//14.no of subarray having sum less than k
 // #include <iostream>
 // #include <vector>
 // using namespace std;
@@ -635,7 +635,7 @@
 //     return 0;
 // }
 
-//14.petrol pump problem
+//15.petrol pump problem
 // #include <iostream>
 // #include <vector>
 // using namespace std;
@@ -663,7 +663,7 @@
 //     return 0;
 // }
 
-//15.k queue in single array 
+//16.k queue in single array 
 // #include <iostream>
 // using namespace std;
 // class kQueue {
@@ -735,7 +735,7 @@
 //     return 0;
 // }
 
-// 16.sum of min and max element of all subarray of size k
+// 17.sum of min and max element of all subarray of size k
 // #include <iostream>
 // #include <vector>
 // #include <deque>
@@ -766,5 +766,115 @@
 //     vector<int> arr = {2, 5, -1, 7, -3, -1, -2};
 //     int k = 4;
 //     cout << sumMinMax(arr, k);
+//     return 0;
+// }
+
+//18.dequeue using ll
+// #include <iostream>
+// using namespace std;
+// class Node {
+// public:
+//     int data;
+//     Node* next;
+//     Node* prev;
+//     Node(int val) {
+//         data = val;
+//         next = NULL;
+//         prev = NULL;
+//     }
+// };
+// class Deque {
+//     Node* front;
+//     Node* rear;
+// public:
+//     Deque() {
+//         front = NULL;
+//         rear = NULL;
+//     }
+//     void push_front(int val) {
+//         Node* newNode = new Node(val);
+//         if (empty()) {
+//             front = rear = newNode;
+//         }
+//         else {
+//             newNode->next = front;
+//             front->prev = newNode;
+//             front = newNode;
+//         }
+//     }
+//     void push_back(int val) {
+//         Node* newNode = new Node(val);
+//         if (empty()) {
+//             front = rear = newNode;
+//         }
+//         else {
+//             rear->next = newNode;
+//             newNode->prev = rear;
+//             rear = newNode;
+//         }
+//     }
+//     void pop_front() {
+//         if (empty())
+//             return;
+//         Node* temp = front;
+//         if (front == rear) {
+//             front = rear = NULL;
+//         }
+//         else {
+//             front = front->next;
+//             front->prev = NULL;
+//         }
+//         delete temp;
+//     }
+//     void pop_back() {
+//         if (empty())
+//             return;
+//         Node* temp = rear;
+//         if (front == rear) {
+//             front = rear = NULL;
+//         }
+//         else {
+//             rear = rear->prev;
+//             rear->next = NULL;
+//         }
+//         delete temp;
+//     }
+//     int getfront() {
+//         if (empty())
+//             return -1;
+//         return front->data;
+//     }
+//     int getrear() {
+//         if (empty())
+//             return -1;
+//         return rear->data;
+//     }
+//     bool empty() {
+//         return front == NULL;
+//     }
+// };
+// int main() {
+//     Deque dq;
+//     dq.push_back(10);
+//     dq.push_back(20);
+//     dq.push_front(5);
+//     dq.push_back(30);
+//     dq.push_front(1);
+//     // Current deque:
+//     // 1 <-> 5 <-> 10 <-> 20 <-> 30
+//     cout << "Front: " << dq.getfront() << endl;
+//     cout << "Rear: " << dq.getrear() << endl;
+//     dq.pop_front();
+//     cout << "After pop_front:" << endl;
+//     cout << "Front: " << dq.getfront() << endl;
+//     cout << "Rear: " << dq.getrear() << endl;
+//     dq.pop_back();
+//     cout << "After pop_back:" << endl;
+//     cout << "Front: " << dq.getfront() << endl;
+//     cout << "Rear: " << dq.getrear() << endl;
+//     if (dq.empty())
+//         cout << "Deque is empty" << endl;
+//     else
+//         cout << "Deque is not empty" << endl;
 //     return 0;
 // }
