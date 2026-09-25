@@ -89,6 +89,23 @@
 //     return root;
 // }
 // //construct bst from postorder 
+// node* constructBSTPostorder(int postorder[],int* postorderidx,int key,int min,int max,int n) {
+//     if (*postorderidx < 0) {
+//         return NULL;
+//     }
+//     node* root = NULL;
+//     if (key > min && key < max) {
+//         root = new node(key);
+//         *postorderidx = *postorderidx - 1;
+//         if (*postorderidx >= 0) {
+//             root->right = constructBSTPostorder( postorder, postorderidx, postorder[*postorderidx], key, max, n);
+//         }
+//         if (*postorderidx >= 0) {
+//             root->left = constructBSTPostorder( postorder, postorderidx, postorder[*postorderidx], min, key, n );
+//         }
+//     }
+//     return root;
+// }
 // node* postorder1(vector<int>& post,int &i,int bound){
 //     if(i<0 || post[i]<bound)
 //         return NULL;
