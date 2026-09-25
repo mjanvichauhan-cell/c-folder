@@ -178,7 +178,7 @@
 //     }
 //     return res;
 // }
-// //catalan bst
+// //catalan bst.
 // vector<node*> constructcatalan(int st,int end){
 //     vector<node*> trees;
 //     if(st>end) {
@@ -201,7 +201,7 @@
 //     }
 //     return trees;
 // }
-// // largest bst in bt
+// // largest bst in bt.
 // struct Info{
 //     int size;
 //     int max;
@@ -227,65 +227,7 @@
 //     curr.isbst=false;
 //     return curr;
 // }
-// // recover bst
-// void swap(int *a,int *b){
-//     int temp=*a;
-//     *a=*b;
-//     *b=temp;
-// }
-// void calcpointers(node* root,node** first,node** mid,node** last,node** prev){
-//     if(root==NULL) return ;
-//     calcpointers(root->left,first,mid,last,prev);
-//     if(*prev && root->data<(*prev)->data){
-//         if(!*first) {
-//             *first=*prev;
-//             *mid=root;
-//         }
-//         else{
-//             *last=root;
-//         }
-//     }
-//     *prev=root;
-//     calcpointers(root->right,first,mid,last,prev);
-// }
-// void restorebst(node* root){
-//     node* first,*mid,*last,*prev;
-//     first=NULL,mid=NULL,last=NULL,prev=NULL;
-//     calcpointers(root,&first,&mid,&last,&prev);
-//     if(first && last){
-//         swap(&(first->data),&(last->data));
-//     }
-//     else if(first && mid){
-//         swap(&(first->data),&(mid->data));
-//     }
-// }
-// //leetcode 235 lca
-// node* lowestCommonAncestor(node* root, node* p, node* q) {
-//     if (root == NULL)
-//         return NULL;
-//     if (p->data < root->data && q->data < root->data)
-//         return lowestCommonAncestor(root->left, p, q);
-//     if (p->data > root->data && q->data > root->data)
-//         return lowestCommonAncestor(root->right, p, q);
-//     return root;
-// }
 // //merge bst
-// void inorder(node* root, vector<int>& v){
-//     if(root == NULL) return;
-//     inorder(root->left, v);
-//     v.push_back(root-> data);
-//     inorder(root->right, v);
-// }
-// node* buildBSTFromSorted(vector<int> arr, int st, int end) {
-//     if (st > end) {
-//         return NULL;
-//     }
-//     int mid = (st + end) / 2;
-//     node* root = new node(arr[mid]);
-//     root->left = buildBSTFromSorted(arr, st, mid - 1);
-//     root->right = buildBSTFromSorted(arr, mid + 1, end);
-//     return root;
-// }
 // node* merge2BST(node* root1, node* root2) {
 //     vector<int> arr1, arr2;
 //     inorder(root1, arr1);
@@ -454,6 +396,7 @@
 // bool isDeadEnd(node* root) {
 //     return solve(root, 1, INT_MAX);
 // }
+//find common
 // void inorder(node* root, vector<int>& v) {
 //     if (root == NULL)
 //         return;
@@ -534,19 +477,6 @@
 //     solve2(root, k, ans);
 //     return ans;
 // }
-// //array to bst
-// node* solve4(vector<int>& arr, int s, int e){
-//     if(s > e)
-//         return NULL;
-//     int mid = s + (e - s) / 2;
-//     node* root = new node(arr[mid]);
-//     root->left = solve4(arr, s, mid - 1);
-//     root->right = solve4(arr, mid + 1, e);
-//     return root;
-// }
-// node* sortedArrayToBST(vector<int>& arr){
-//     return solve4(arr, 0, arr.size() - 1);
-// }
 // //flatten
 // void inorder(node* root, vector<node*>& v){
 //     if(root == NULL)
@@ -610,125 +540,4 @@
 //         cout << x << " ";  
 // }
 
-//3.fixing two node of bst
-// #include<iostream>
-// using namespace std;
-// struct node{
-//     int data;
-//     node* left;
-//     node* right;
-//     node(int val){
-//         data = val;
-//         left = NULL;
-//         right = NULL;
-//     }
-// };
-// void inorder(node* root, node* &first, node* &middle,
-//              node* &last, node* &prev) {
-//     if (root == NULL)
-//         return;
-//     inorder(root->left, first, middle, last, prev);
-//     if (prev && root->data < prev->data) {
-//         if (first == NULL) {
-//             first = prev;
-//             middle = root;
-//         } else {
-//             last = root;
-//         }
-//     }
-//     prev = root;
-//     inorder(root->right, first, middle, last, prev);
-// }
-// void restoreBST(node* root) {
-//     node* first = NULL;
-//     node* middle = NULL;
-//     node* last = NULL;
-//     node* prev = NULL;
-//     inorder(root, first, middle, last, prev);
-//     if (first && last)
-//         swap(first->data, last->data);
-//     else if (first && middle)
-//         swap(first->data, middle->data);
-// }
-// void inorderPrint(node* root) {
-//     if (root == NULL)
-//         return;
-//     inorderPrint(root->left);
-//     cout << root->data << " ";
-//     inorderPrint(root->right);
-// }
-// int main() {
-//     node* root = new node(6);
-//     root->left = new node(10);
-//     root->right = new node(2);
-//     root->left->left = new node(1);
-//     root->left->right = new node(3);
-//     root->right->left = new node(7);
-//     root->right->right = new node(12);
-//     restoreBST(root);
-//     inorderPrint(root);
-//     return 0;
-// }
 
-//4.sorted ll to bst
-// #include<iostream>
-// using namespace std;
-// struct node{
-//     int data;
-//     node* next;
-//     node(int val){
-//         data = val;
-//         next = NULL;
-//     }
-// };
-// struct TreeNode{
-//     int data;
-//     TreeNode* left;
-//     TreeNode* right;
-//     TreeNode(int val){
-//         data = val;
-//         left = NULL;
-//         right = NULL;
-//     }
-// };
-// TreeNode* solve(node* head){
-//     if(head == NULL)
-//         return NULL;
-//     if(head->next == NULL)
-//         return new TreeNode(head->data);
-//     node* slow = head;
-//     node* fast = head;
-//     node* prev = NULL;
-//     while(fast && fast->next){
-//         prev = slow;
-//         slow = slow->next;
-//         fast = fast->next->next;
-//     }
-//     prev->next = NULL;
-//     TreeNode* root = new TreeNode(slow->data);
-//     root->left = solve(head);
-//     root->right = solve(slow->next);
-//     return root;
-// }
-// TreeNode* sortedListToBST(node* head){
-//     return solve(head);
-// }
-// void preorder(TreeNode* root){
-//     if(root == NULL)
-//         return;
-//     cout << root->data << " ";
-//     preorder(root->left);
-//     preorder(root->right);
-// }
-// int main(){
-//     node* head = new node(1);
-//     head->next = new node(2);
-//     head->next->next = new node(3);
-//     head->next->next->next = new node(4);
-//     head->next->next->next->next = new node(5);
-//     head->next->next->next->next->next = new node(6);
-//     head->next->next->next->next->next->next = new node(7);
-//     TreeNode* root = sortedListToBST(head);
-//     preorder(root);
-//     return 0;
-// }
