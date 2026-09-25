@@ -88,6 +88,19 @@
 //     }
 //     return root;
 // }
+//Method2
+// node* solve(vector<int>& pre,int &i,int bound){
+//     if(i==pre.size() || pre[i]>bound)
+//         return NULL;
+//     node* root=new node(pre[i++]);
+//     root->left=solve(pre,i,root->data);
+//     root->right=solve(pre,i,bound);
+//     return root;
+// }
+// node* constructBST(vector<int>& pre){
+//     int i=0;
+//     return solve(pre,i,INT_MAX);
+// }
 // //construct bst from postorder 
 // node* constructBSTPostorder(int postorder[],int* postorderidx,int key,int min,int max,int n) {
 //     if (*postorderidx < 0) {
@@ -106,6 +119,7 @@
 //     }
 //     return root;
 // }
+//Method2
 // node* postorder1(vector<int>& post,int &i,int bound){
 //     if(i<0 || post[i]<bound)
 //         return NULL;
@@ -132,26 +146,6 @@
 //         st.push(pre[i]);
 //     }
 //     return 1;
-// }
-// //preorder to postorder
-// node* solve(vector<int>& pre,int &i,int bound){
-//     if(i==pre.size() || pre[i]>bound)
-//         return NULL;
-//     node* root=new node(pre[i++]);
-//     root->left=solve(pre,i,root->data);
-//     root->right=solve(pre,i,bound);
-//     return root;
-// }
-// node* constructBST(vector<int>& pre){
-//     int i=0;
-//     return solve(pre,i,INT_MAX);
-// }
-// void postorder(node* root){
-//     if(root==NULL)
-//         return;
-//     postorder(root->left);
-//     postorder(root->right);
-//     cout<<root->data<<" ";
 // }
 // // valid bst
 // bool isbst(node*root,node*min=NULL,node*max=NULL){
