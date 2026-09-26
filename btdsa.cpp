@@ -186,13 +186,6 @@
 //     Node->left=buildtree1(postorder,inorder,start,pos-1);
 //     return Node;
 // }
-// //preorder
-// void preorderprint(node* root){
-//     if(root==NULL) return;
-//     cout<<root->data<<" ";
-//     preorderprint(root->left);
-//     preorderprint(root->right);
-// }
 // //preorder iterative
 // void preorder(node* root){
 //     if(root==NULL)
@@ -233,13 +226,6 @@
 //         }
 //     }
 // }
-// //inorder
-// void inorderprint(struct node*root){
-//      if(root==NULL) return;
-//     inorderprint(root->left);
-//     cout<<root->data<<" ";
-//     inorderprint(root->right);
-// }
 // //inorder iterative
 // void inorder(node* root){
 //     stack<node*> st;
@@ -278,13 +264,6 @@
 //             }
 //         }
 //     }
-// }
-// //postorder
-// void postorderprint(struct node*root){
-//      if(root==NULL) return;
-//     postorderprint(root->left);
-//     postorderprint(root->right);
-//     cout<<root->data<<" ";
 // }
 // //postorder iterative
 // void postorder(node* root){
@@ -888,7 +867,6 @@
 //     }
 //     return path1[pc-1];
 // }
-
 // //lca2
 // node* LCA1(node* root, int p, int q) {
 //     if (root == NULL)
