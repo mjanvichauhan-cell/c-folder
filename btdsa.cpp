@@ -488,7 +488,7 @@
 //         return 0;
 //     return root->data + sum(root->left) + sum(root->right);
 // }
-// //print sum of k nodes
+// //print sum of kth level nodes
 // int sumatk(node* root,int k){
 //     if(root==NULL) return -1;
 //     queue<node*> q;
@@ -641,22 +641,6 @@
 //     for(auto x:mp)
 //         cout<<x.second<<" ";
 // }
-// //flatten a binary tree in ll
-// void flatten(node *root){
-//     if(root==NULL or (root->left==NULL && root->right==NULL)) return;
-//     if(root->left!=NULL){
-//         flatten(root->left);
-//         node* temp=root->right;
-//         root->right=root->left;
-//         root->left=NULL;
-//         node* t=root->right;
-//         while(t->right!=NULL){
-//             t=t->right;
-//         }
-//         t->right=temp;
-//     }
-//     flatten(root->right);
-// }
 // int main(){
 //     //traversal
 //     struct node* root=new node(6);
@@ -700,12 +684,6 @@
 //     bottomView(root);
 //     topView(root);
 //     kthlevel(root,2);
-//     //flatten root
-//     flatten(root);
-//     while(root){
-//         cout<<root->data<<" ";
-//         root=root->right;
-//     }
 // }
 
 //3.ques 
@@ -727,43 +705,7 @@
 //     cout<<root->data<<" ";
 //     inorderprint(root->right);
 // }
-// // bst identical
-// bool isidentical(node* root1,node* root2){
-//     if(root1==NULL && root2==NULL) return true;
-//     else if(root1 ==NULL or root2==NULL){
-//         return false;
-//     }
-//     else{
-//         bool cond1=root1->data==root2->data;
-//         bool cond2=isidentical(root1->left,root2->left);
-//         bool cond3=isidentical(root1->right,root2->right);
-//         if(cond1 && cond2 && cond3) return true;
-//         return false;
-//     }
-// }
-// //balanced heigh 
-// int heightofbt(node* root){
-//     if(root==NULL) return 0;
-//     int lh=heightofbt(root->left);
-//     int rh=heightofbt(root->right);
-//     return max(lh,rh)+1;
-// }
-// bool isbalanced(node* root){
-//     if(root==NULL)  return true;
-//     if(isbalanced(root->left)==false){
-//         return false;
-//     }
-//     if(isbalanced(root->right)==false){
-//         return false;
-//     }
-//     int lh=heightofbt(root->left);
-//     int rh=heightofbt(root->right);
-//     if(abs(lh-rh)<=1) return true;
-//     else{
-//         return false;
-//     }
-// }
-// //.recursive
+// //balanced heigh recursive
 // bool isbalanced1(node* root,int *h){
 //     if(root==NULL)  return true;
 //     int lh=0,rh=0;
@@ -778,14 +720,6 @@
 //     else{
 //         return false ;
 //     }
-// }
-// //mirror tree
-// void mirror(node* root){
-//     if(root==NULL)
-//         return;
-//     swap(root->left,root->right);
-//     mirror(root->left);
-//     mirror(root->right);
 // }
 // //two node are cousin
 // int level(node* root,int key,int lev){
@@ -1036,7 +970,7 @@
 //         root->data+=root->right->data;
 //     }
 // }
-// //sum of longest bloodline
+// //max sum of path 
 // int sum(node* root,int &maxLen){
 //     if(root==NULL)
 //         return 0;
@@ -1048,9 +982,28 @@
 //     if(root==NULL)
 //         return 0;
 //     int maxlen=0;
-//     return solve(root,maxlen);
+//     return sum(root,maxlen);
 // }
-// //k sum path
+////longest bloodline sum 
+// int sum(node* root, int &maxLen)
+// {
+//     if(root==NULL)
+//         return 0;
+//     int leftLen=0,rightLen=0;
+//     int leftSum=sum(root->left,leftLen);
+//     int rightSum=sum(root->right,rightLen);
+//     if(leftLen > rightLen)
+//     {
+//         maxLen=leftLen+1;
+//         return root->data + leftSum;
+//     }
+//     else
+//     {
+//         maxLen=rightLen+1;
+//         return root->data + rightSum;
+//     }
+// }
+// //count path sum equal to k path
 // void solve(node* root,int k,int &count,vector<int>& path){
 //     if(root==NULL)
 //         return;
