@@ -1075,24 +1075,6 @@
 //     sumreplace(root);
 //     inorderprint(root);
 //     zigzagtraversal(root);
-//     //identical 
-//     node* root1=new node(6);
-//     root1->left=new node(9);
-//     root1->right=new node(3);
-//     root1->left->left=new node(1);
-//     root1->left->right=new node(4);
-//     node* root2=new node(6);
-//     root2->left=new node(9);
-//     root2->right=new node(3);
-//     root2->left->left=new node(1);
-//     root2->left->right=new node(4);
-//     if(isidentical(root1,root2))
-//         cout<<"Identical";
-//     else
-//         cout<<"Not Identical";
-//     //mirror 
-//     mirror(root);
-//     inorderprint(root);
 //     //iscousin
 //     if(isCousin(root,1,11))
 //         cout<<"Cousin";
